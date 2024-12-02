@@ -1,0 +1,52 @@
+/* Ensure the images have smooth transition and add animation effects */
+.carousel-inner .carousel-item {
+  transition: transform 0.5s ease, opacity 0.5s ease-in-out;
+}
+
+/* Add a zoom effect on the images */
+.carousel-inner .carousel-item img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Zoom In effect on carousel item images */
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev,
+.carousel-inner .carousel-item.active {
+  transform: scale(1.1);
+}
+
+/* Fade effect for carousel items */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Add a zoom-in effect on hover */
+.carousel-inner .carousel-item img:hover {
+  transform: scale(1.0);
+  transition: transform 0.5s ease;
+}
+
+/* Add a shadow effect to the images for depth */
+.carousel-inner .carousel-item img {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* On hover, add a more intense shadow effect */
+.carousel-inner .carousel-item img:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}

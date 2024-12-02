@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Footer</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>
+        /* Basic Footer Styling */
+.footer {
+    background-color: #2f2f2f;
+    color: white;
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1;
+    padding: 0 20px;
+    opacity: 0;                  /* Initially hide elements */
+    transform: translateY(50px); /* Initially translate elements down */
+    transition: opacity 1s ease, transform 1s ease; /* Animation properties */
+}
+
+.footer-col h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin: 10px 0;
+}
+
+.footer-col ul li a {
+    color: #A8CF45;
+    text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+    text-decoration: underline;
+}
+
+.email {
+    color: #A8CF45;
+    text-decoration: none;
+}
+
+.email:hover {
+    text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 20px;
+    color: #A8CF45;
+}
+
+/* Styling the logo-container (logo and company name in a row) */
+.logo-container {
+    display: flex;               /* Flexbox to display logo and name in a row */
+    align-items: center;         /* Vertically center the items */
+    gap: 10px;                   /* Space between the logo and text */
+}
+
+.logo {
+    max-width: 50px;             /* Limit the size of the logo */
+    height: auto;                /* Keep aspect ratio intact */
+}
+
+.company-name {
+    font-size: 20px;             /* Adjust font size of company name */
+    font-weight: bold;           /* Make the company name bold */
+    margin: 0;                   /* Remove any default margin */
+}
+
+/* Animation classes */
+.fade-in-up {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+     </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="container">
+            <!-- Logo and Company Name -->
+            <div class="footer-col logo-section">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="images/bg-logo.png" alt="logo" class="logo">
+                    </a>
+                    <h4 class="company-name">HORTILIFE GENETICS PVT. LTD.</h4>
+                </div>
+                <p>Hortilife Genetics is the national peak industry organisation representing the plant science sector in India.</p>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="footer-col quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-col contact">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-location-dot"></i> R.No 04 Ardi Chawl, Jivdhani Nagar, Diwali Thane, 400612 Maharashtra, India (Mumbai)</p>
+                <p><i class="fa-solid fa-phone"></i> +91-9455681536 <br> <i class="fa-solid fa-phone"></i> 05224554562</p>
+                <a href="mailto:support@hortilife.com" class="email"><i class="fa-solid fa-envelope"></i> support@hortilife.com</a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; Copyright Hortlife Genetics, All rights reserved. Designed by BTPL</p>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+    const footerColumns = document.querySelectorAll('.footer-col');
+    
+    // Apply animations to each column with a slight delay
+    footerColumns.forEach((col, index) => {
+        setTimeout(() => {
+            col.classList.add('fade-in-up');
+        }, index * 300);  // Delay each column's animation by 300ms
+    });
+});
+
+    </script>
+</body>
+</html>

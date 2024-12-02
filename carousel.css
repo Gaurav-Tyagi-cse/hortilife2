@@ -1,0 +1,95 @@
+
+
+/* Style for carousel items */
+.carousel-item {
+    position: relative;
+}
+
+/* Dim the image using an overlay */
+.carousel-item img {
+    filter: brightness(65%);
+    /* Reduce image brightness */
+    transition: filter 0.5s ease;
+    /* Smooth transition for brightness */
+}
+
+/* Default styles for larger screens */
+.carousel-caption {
+    position: absolute;
+    top: 250px !important;
+    left: 30%;
+    right: 20%;
+    text-align: left;
+    /* font-size: 1.5rem; */
+    transition: all 0.3s ease-in-out;
+}
+
+.carousel-caption h3 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.carousel-caption p {
+    padding-left: 10rem;
+    font-size: 3.2rem !important;
+    color: #fff;
+}
+
+/* Mobile styles (up to 767px)
+@media (max-width: 767px) {
+    .carousel-caption {
+        top: 100px;
+                left: 10px;
+                right: 10px;
+                text-align: center;
+        font-size: 1rem;
+    }
+
+    .carousel-caption h3 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+
+
+    Tablet styles (768px to 1024px)
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .carousel-caption {
+            top: 120px;
+                left: 15%;
+                right: 15%;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .carousel-caption h3 {
+            font-size: 1.8rem;
+        }
+
+        .carousel-caption p {
+            font-size: 1.1rem;
+        }
+    }
+
+    Extra Large Screens (over 1024px)
+    @media (min-width: 1025px) {
+        .carousel-caption {
+            top: 150px;
+                left: 20%;
+                right: 20%;
+                text-align: left;
+            font-size: 1.5rem;
+        }
+
+        .carousel-caption h3 {
+            font-size: 2rem;
+        }
+
+        .carousel-caption p {
+            font-size: 1.2rem;
+        }
+    }
+
+    */

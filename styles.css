@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&amp;family=Jost:wght@300;400;500;600&amp;display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&family=Mea+Culpa&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&family=Mea+Culpa&family=Mukta:wght@200;300;400;500;600;700;800&family=Playwrite+PE:wght@100..400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+
+/* .bg-success {
+    background-color: #118900 !important;
+  }
+   */
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+/* Add top padding to body content to account for the fixed navbar */
+body {
+    padding-top: 80px;
+}
+
+/* Navbar Link Styling */
+.navbar-light .navbar-nav .nav-link {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Active link styling */
+.navbar-light .navbar-nav .nav-link.active {
+    color: #18b92e;
+}
+
+/* Hover effect for links */
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #18b92e;
+}
+
+/* Styling for Social Media Icons in Navbar */
+.navLinks {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.social-icon {
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff;
+}
+
+/* Logo Animation */
+.logo img {
+    width: 100px;
+    height: auto;
+    padding-left: 10px;
+    opacity: 0;
+    animation: fadeInScale 1.5s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Small adjustments for mobile responsiveness */
+@media (max-width: 992px) {
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 18px; /* Slightly smaller font size */
+    }
+
+    /* Logo size adjustment for tablet-sized devices */
+    .logo img {
+        width: 120px;
+    }
+
+    .navLinks {
+        gap: 10px; /* Slightly smaller gap between icons */
+    }
+
+    .social-icon {
+        font-size: 18px; /* Smaller icon size */
+    }
+}
+
+/* Additional responsiveness for small screens */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .navLinks {
+        gap: 8px;
+    }
+
+    .social-icon {
+        font-size: 16px;
+    }
+
+    /* Adjust navbar links for mobile */
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 16px; /* Smaller font size on smaller screens */
+    }
+}
+
+/* Very small screens (Mobile portrait mode) */
+@media (max-width: 480px) {
+    .logo img {
+        width: 100px; /* Further adjust logo size for very small screens */
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 14px; /* Even smaller font size */
+    }
+
+    .social-icon {
+        font-size: 14px; /* Adjust social icon size */
+    }
+}
+
+/* Style for carousel items */
+.carousel-item {
+    position: relative;
+}
+
+/* Dim the image using an overlay */
+.carousel-item img {
+    filter: brightness(50%); /* Reduce image brightness */
+    transition: filter 0.5s ease; /* Smooth transition for brightness */
+}
+
+/* Style for carousel captions */
+.carousel-caption { 
+    position: absolute;
+    top: 150px; /* Adjust vertical positioning */
+    left: -700px;  
+    right: 20px;
+    padding: 15px;
+    border-radius: 5px;  /* Optional: adds rounded corners */
+    opacity: 0; /* Initially hide the caption */
+    transform: translateY(50px); /* Start from below */
+    transition: opacity 1s ease, transform 1s ease; /* Add transition for smooth animation */
+   
+    /* Add text shadow for brightness */
+    color: #fff; /* White text color for better contrast */
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8); /* Bright text shadow */
+}
+
+/* Add animation class */
+.carousel-caption.animate-text {
+    animation: fadeInUp 1s forwards;
+}
+
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Starts below the image */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends at original position */
+    }
+}
+
+/* Optional: Adjust font size */
+.carousel-caption h3 {
+    font-size: 3rem; /* Adjust as necessary */
+    font-weight: 700;
+    font-family: serif !important;
+}
+
+.carousel-caption p {
+    font-size: 2rem; /* Adjust as necessary */
+    font-family: "Mea Culpa", cursive;
+}
+
+
+.card-body{
+    text-align: center;
+}
+.categories{
+    text-align: center;
+    font-family: open-sans;
+    padding: 30px 0px;
+}
+.img-fluid{
+    border-radius: 5%;
+    padding-top: 20px;
+}
+
+.para{
+    padding: 15px 0 0 0;    
+    font-size: 18px;
+    /* color: palevioletred; */
+}
+.para a{
+    text-decoration: none;
+}
+
+
+/* box */
+
+/* Section background */
+.productBox {
+    /* background-color: #8a6f6f; */
+    padding: 100px 20px;
+}
+
+
+h2 {
+    font-size: 2.5rem;
+    /* color: #333; */
+    font-weight: bold;
+}
+
+/* Row layout for the images */
+.boxRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Box that holds the images */
+.box {
+    padding: 20px;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: relative; /* Positioning for overlay */
+}
+
+
+/* Image styling */
+.box img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effect */
+}
+.box a{
+    text-decoration: none;
+}
+
+/* Hover effect for images */
+.box:hover img {
+    transform: scale(1.05); /* Slight zoom effect */
+    filter: brightness(70%); /* Darker image on hover */
+    opacity: 0.7; /* Slightly reduce opacity on hover */
+}
+
+
+/* Overlay styling */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+/* Text styling on the image */
+.text-on-image {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+
+
+.image-container:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .row {
+        flex-direction: column; /* Stack images vertically on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem; /* Adjust heading size on small screens */
+    }
+
+    .row {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+    }
+
+    .box {
+        margin-bottom: 20px;
+    }
+}
+
+
+.microbes{
+    padding: 30px;
+}
+.microbes p{
+    font-size: 17px;
+}
+ /* For animating the text (slide from the right) */
+.microbes {
+    opacity: 0; /* Start as invisible */
+    transform: translateX(100px); /* Initially off-screen to the right */
+    animation: slideInText 3s ease-out forwards; /* Animation definition */
+}
+
+/* For animating the image (slide from the left) */
+img {
+    opacity: 0; /* Start as invisible */
+    transform: translateX(-100px); /* Initially off-screen to the left */
+    animation: slideInImage 1s ease-out forwards; /* Animation definition */
+}
+
+/* Keyframe for sliding the text from right to left */
+@keyframes slideInText {
+    0% {
+        opacity: 0;
+        transform: translateX(100px); /* Start off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Move to normal position */
+    }
+}
+
+/* Keyframe for sliding the image from left to right */
+@keyframes slideInImage {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px); /* Start off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Move to normal position */
+    }
+}
+
+
+/* Link section */
+.link {
+    /* background-color: #333; Dark background for the section */
+    /* color: white; White text for contrast */
+    padding: 40px 0;
+    text-align: center;
+}
+
+.link h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+   
+}
+.link h3:hover{
+    color: #118900;
+}
+
+.link p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #118900;
+   
+}
+
+.contact-section   p{
+    font-size: 20px;
+}
+
+/* Social icons container */
+.socials ul {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 20px; /* Space between the icons */
+    list-style-type: none;
+}
+
+.socials ul li {
+    display: inline-block;
+}
+
+/* Social media icon styling */
+.socials ul li a {
+    display: block;
+    font-size: 2rem;
+    /* color: white; */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.socials ul li a:hover {
+    color: #007bff; /* Change to a blue color on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .link h3 {
+        font-size: 1.5rem; /* Adjust heading size for small screens */
+    }
+
+    .link p {
+        font-size: 1rem; /* Adjust paragraph size for small screens */
+    }
+
+    .socials ul {
+        flex-direction: column; /* Stack icons vertically on small screens */
+        gap: 15px;
+    }
+
+    .socials ul li a {
+        font-size: 1.5rem; /* Adjust icon size on small screens */
+    }
+}
+
+
+/* Column Styling for Larger Screens */
+.col-lg-3 {
+    flex: 1 1 23%;        /* Each image takes 23% of the container on large screens */
+    display: flex;        /* Makes the container a flexbox to center images */
+    justify-content: center; /* Centers the image horizontally */
+}
+
+/* Poster Image Styling */
+.col-lg-3 img {
+    width: 100%;          /* Ensures the image fills the width of the container */
+    height: auto;         /* Keeps the aspect ratio intact */
+    object-fit: cover;    /* Ensures the image covers the space without stretching */
+    border-radius: 8px;   /* Optional: Adds rounded corners to the images */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds shadow to the images */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover Effect for Images */
+.col-lg-3 img:hover {
+    transform: scale(1.05);  /* Slight zoom effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .col-lg-3 {
+        flex: 1 1 48%; /* Each image takes 48% of the container on medium screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .col-lg-3 {
+        flex: 1 1 100%; /* Each image takes 100% of the container on small screens */
+    }
+}
+
+
+
+
+
+
+/* Style for the footer */
+
+/* footer {
+    position: fixed; Fixes the footer to the bottom
+    left: 0; Aligns the footer to the left of the page
+    bottom: 0; Places the footer at the bottom
+    width: 100%; Ensures the footer spans the full width of the browser
+    background-color: #b42762; Background color
+    color: white; Text color
+    text-align: center; Centers the text
+    padding: 20px 0; Padding for spacing
+    font-size: 16px; Font size
+    z-index: 1000; Ensures the footer stays on top of other content
+  }
+   */
+ 
+
+/* Footer Section */
+.footer {
+    background-color: #282828ee;
+    color: #fff;
+    padding: 60px 20px;
+    position: relative;
+    text-align: center;
+}
+
+.footer h4 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer p {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.footer-col {
+    margin-bottom: 30px;
+    width: 30%;
+}
+.footer-col h4{
+    padding-top: 20px;
+}
+
+/* Style for the columns in the footer */
+.footer .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Footer Links */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin: 10px 0;
+}
+
+.footer-col ul li a {
+    color: #f7ebeb;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.footer-col ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Social Media Links */
+.footer-socials ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.footer-socials ul li {
+    margin: 0 10px;
+}
+
+.footer-socials ul li a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer-socials ul li a:hover {
+    color: #c42689;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: #4CAF50;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    margin: 0;
+    color: #fafafa;
+}
+
+/* Footer Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 10px;
+    }
+
+    .footer-col {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+        font-size: 20px;
+    }
+
+    .footer-col p {
+        font-size: 14px;
+    }
+
+    .footer-col ul li {
+        margin: 8px 0;
+    }
+
+    .footer-socials ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-socials ul li {
+        margin: 5px 0;
+    }
+
+    .footer-socials ul li a {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-col h4 {
+        font-size: 16px;
+    }
+
+    .footer-col p {
+        font-size: 13px;
+    }
+
+    .footer-socials ul li a {
+        font-size: 18px;
+    }
+
+    .footer-bottom p {
+        font-size: 13px;
+    }
+}
